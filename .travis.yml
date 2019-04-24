@@ -28,19 +28,21 @@ branches:
 # Start: Build Lifecycle
 before_script:
   - export TZ='Asia/Shanghai'
+  - npm install -g gulp
+  - chmod +x _travis.sh
 
 install:
   - npm install
 
 # 执行清缓存，生成网页操作
 script:
-  - hexo clean && hexo generate
+  - hexo clean && hexo g
   - gulp
 
 # 设置git提交名，邮箱；替换真实token到_config.yml文件，最后depoy部署
 after_script:
-  - git config user.name "mno"
-  # 替换同目录下的_config.yml文件中gh_token字符串为travis后台刚才配置的变量，注意此处sed命令用了双引号。单引号无效！
-  - sed -i "s/gh_token/${GH_TOKEN}/g" ./_config.yml
-  - hexo deploy
+  - ./_travis.sh
 # End: Build LifeCycle
+env:
+ global:
+   - GH_REF: github.com/immno/immno.github.io.git
