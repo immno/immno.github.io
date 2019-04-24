@@ -77,3 +77,7 @@ theme: hexo-theme-snippet
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
+- type: git
+  # 下方的gh_token会被.travis.yml中sed命令替换
+  repo: https://gh_token@github.com/immno/immno.github.io.git
+  branch: master
