@@ -28,7 +28,6 @@ branches:
 # Start: Build Lifecycle
 before_script:
   - export TZ='Asia/Shanghai'
-  - npm install -g gulp
 
 install:
   - npm install
