@@ -72,7 +72,7 @@ $ sudo apt-get install libxml2-dev
 - 查看包存储的目录`.libPaths()`
 - 添加存储目录`.libPaths("/path/to/directory/with/libraries")`
 
-### 3.其他配置
+## 3.其他配置
 1）查看配置
 ```
 $ R CMD Rserve --RS-settings

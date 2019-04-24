@@ -32,6 +32,7 @@ before_script:
 install:
   - npm install
   - npm install -g gulp
+  - npm install --save-dev jshint gulp-jshint
 # 执行清缓存，生成网页操作
 script:
   - hexo clean && hexo generate
