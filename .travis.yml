@@ -5,7 +5,7 @@ language: node_js
 sudo: required
 
 # 指定node_js版本
-node_js: stable
+node_js: 11.14.0
 
 # 指定缓存模块，可选。缓存可加快编译速度。
 cache:
@@ -36,7 +36,8 @@ install:
 
 # 执行清缓存，生成网页操作
 script:
-  - hexo clean && hexo g
+  - hexo clean 
+  - hexo g
   - du -sh ./*
   - du -sh ./public/*
   - gulp
