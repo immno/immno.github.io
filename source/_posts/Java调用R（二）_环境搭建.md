@@ -1,12 +1,13 @@
 ---
 title: Java调用R（二） 环境搭建
-date: 2017/6/17 16:22:45
-updated: 2019/4/24 18:46:56
+date: '2017/6/17 16:22:45'
+updated: '2019/4/24 18:46:56'
 comments: true
-tags: 
-    - Java调用R
-categories: 
-    - R
+tags:
+  - Java调用R
+categories:
+  - R
+abbrlink: 38870
 ---
 
 > 摘要：描述分别在Ubuntu、Linux、Windows上搭建R的环境，以及一些配置项。

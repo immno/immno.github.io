@@ -1,12 +1,13 @@
 ---
 title: Java调用R（一） 编写程序
-date: 2017/6/16 19:20:23
-updated: 2019/4/24 18:40:28
+date: '2017/6/16 19:20:23'
+updated: '2019/4/24 18:40:28'
 comments: true
-tags: 
-    - Java调用R
-categories: 
-    - R
+tags:
+  - Java调用R
+categories:
+  - R
+abbrlink: 46404
 ---
 
 > 摘要：实现Java调用R语言的两种方式，以及在调用过程中应该注意的和优化的事项。
