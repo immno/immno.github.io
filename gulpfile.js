@@ -21,38 +21,6 @@
         }
 
     /*====================================================
-         开发主题
-    ====================================================*/
-
-    // CSS预处理
-    gulp.task('less-task', function() {
-        return gulp.src(paths.source + 'css/less/_style.less')
-        .pipe(plumber({
-            errorHandler: notify.onError('Error: <%= error.message %>')
-        }))
-        .pipe(less())
-        .pipe(rename({basename: "style"}))
-        .pipe(gulp.dest(paths.source + 'css'))
-        .pipe(notify({message: 'less compile complete'}));
-    });
-
-    // 校验JS语法和风格
-    gulp.task('js-task', function() {
-        return gulp.src(paths.source + 'js/*.js')
-        .pipe(jshint())
-        .pipe(jshint.reporter(stylish))
-        .pipe(gulp.dest(paths.source + 'js/'))
-        .pipe(notify({message: 'js compile complete'}));
-    });
-
-    // 监听任务-主题开发模式
-    gulp.task('dev', function() {
-        gulp.watch(paths.source + 'css/less/*.less', ['less-task']);
-        gulp.watch(paths.source + 'js/*.js', ['js-task']);
-    });
-
-
-    /*====================================================
         部署前代码处理
     ====================================================*/
 
@@ -99,10 +67,10 @@
     });
 
     // 同步执行task
-    gulp.task('deploy',sequence(['minify-css','minify-js'],'rev','minify-html'));
+    gulp.task('deploy', gulp.series('minify-css','minify-js','rev','minify-html'));
 
     // 部署前代码处理
-    gulp.task('default',['deploy'],function(e){
+    gulp.task('default', gulp.series('deploy',function(e){
        console.log("[complete] please execute： hexo d");
-    })
+    }));
 })();
