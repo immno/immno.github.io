@@ -29,12 +29,15 @@ branches:
 before_script:
   - export TZ='Asia/Shanghai'
 
+before_install:
+  - npm install hexo-cli -g
+
 install:
   - npm install
 
 # 执行清缓存，生成网页操作
 script:
-  - hexo clean && hexo g
+  - hexo clean && hexo g && gulp
 
 # 设置git提交名，邮箱；替换真实token到_config.yml文件，最后depoy部署
 after_script:
