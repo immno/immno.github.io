@@ -16,10 +16,11 @@ categories:
 只需要修改
 - `password`可以换成自己的密码
 - `port`可以换成其他端口
-- 加密方式默认为：aes-256-cfb
+- 加密方式默认为：aes-256-cfb  
 ![](/images/shadowsocks_config.png)
 
 ## 脚本
+`Vultr`新建服务器`Startup Script ( Manage )`添加脚本：
 ![](/images/vultr_script.png)
 ```shell
 #!/bin/sh
